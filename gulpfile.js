@@ -10,7 +10,7 @@ const cleancss = require("gulp-clean-css");
 
 const babel = require("gulp-babel");
 
-var ghPages = require("gulp-gh-pages");
+const ghPages = require("gulp-gh-pages");
 
 function scripts() {
   return src(["app/js/app.js"])
@@ -49,7 +49,7 @@ function buildcopy() {
 }
 
 function deploy() {
-  return src(["./dist/**/*"]).pipe(ghPages());
+  return src("./dist/**/*").pipe(ghPages());
 }
 
 exports.scripts = scripts;

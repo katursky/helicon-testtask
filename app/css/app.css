@@ -38,6 +38,7 @@ button:hover {
 
 .active {
   background: #22943c;
+  cursor: auto;
 }
 
 .wrapper {
