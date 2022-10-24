@@ -8,8 +8,13 @@ const autoprefixer = require("gulp-autoprefixer");
 
 const cleancss = require("gulp-clean-css");
 
+const babel = require("gulp-babel");
+
+var ghPages = require("gulp-gh-pages");
+
 function scripts() {
   return src(["app/js/app.js"])
+    .pipe(babel({ presets: ["es2015"] }))
     .pipe(concat("app.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js/"));
@@ -43,6 +48,10 @@ function buildcopy() {
   ).pipe(dest("dist"));
 }
 
+function deploy() {
+  return src(["./dist/**/*"]).pipe(ghPages());
+}
+
 exports.scripts = scripts;
 
 exports.default = parallel(styles, scripts);
@@ -50,3 +59,5 @@ exports.default = parallel(styles, scripts);
 exports.styles = styles;
 
 exports.build = series(styles, scripts, buildcopy);
+
+exports.deploy = deploy;

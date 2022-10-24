@@ -26,6 +26,7 @@ button {
   border-radius: 3px;
   border: none;
   color: white;
+  font-weight: 900;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -33,6 +34,10 @@ button {
 button:hover {
   background: #22943c;
   transition: 0.3s;
+}
+
+.active {
+  background: #22943c;
 }
 
 .wrapper {
