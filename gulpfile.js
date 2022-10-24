@@ -10,8 +10,6 @@ const cleancss = require("gulp-clean-css");
 
 const babel = require("gulp-babel");
 
-const ghPages = require("gulp-gh-pages");
-
 function scripts() {
   return src(["app/js/app.js"])
     .pipe(babel({ presets: ["@babel/env"] }))
@@ -48,10 +46,6 @@ function buildcopy() {
   ).pipe(dest("dist"));
 }
 
-function deploy() {
-  return src("./dist/**/*").pipe(ghPages());
-}
-
 exports.scripts = scripts;
 
 exports.default = parallel(styles, scripts);
@@ -59,5 +53,3 @@ exports.default = parallel(styles, scripts);
 exports.styles = styles;
 
 exports.build = series(styles, scripts, buildcopy);
-
-exports.deploy = deploy;
