@@ -18,15 +18,17 @@
   },
   "homepage": "https://github.com/katursky/helicon-testtask#readme",
   "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-uglify-es": "^3.0.0"
   },
   "dependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "gulp-babel": "^8.0.0"
+    "babel-preset-es2015": "^6.24.1"
   }
 }

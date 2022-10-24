@@ -14,7 +14,7 @@ var ghPages = require("gulp-gh-pages");
 
 function scripts() {
   return src(["app/js/app.js"])
-    .pipe(babel({ presets: ["es2015"] }))
+    .pipe(babel({ presets: ["@babel/env"] }))
     .pipe(concat("app.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js/"));
