@@ -41,7 +41,9 @@ const setDataPrice = () => {
   let dataPriceArray = data.map((result) => result.price);
   for (let c = 0; c < dataPriceArray.length; c++) {
     for (let i = 0; i < priceArray.length; i++) {
-      priceArray[i].innerHTML = `${dataPriceArray[i]} РУБ.`;
+      priceArray[i].innerHTML = `1 ${dataPriceArray[i]
+        .toString()
+        .slice(1)} РУБ.`;
       buttonArray[i].dataset.price = dataPriceArray[i];
     }
   }
@@ -59,7 +61,7 @@ for (let item of buttonArray) {
     item.classList.add("active");
     let itemPrice = item.dataset.price;
     sum += parseInt(itemPrice.toString());
-    priceCount.innerHTML = sum;
+    priceCount.innerHTML = `1 ${sum.toString().slice(1)}`;
     item.disabled = true;
   });
 }
