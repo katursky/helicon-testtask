@@ -59,6 +59,7 @@ let sum = 0;
 for (let item of buttonArray) {
   item.addEventListener("click", () => {
     item.classList.add("active");
+    item.innerHTML = "ДОБАВЛЕНО";
     let itemPrice = item.dataset.price;
     sum += parseInt(itemPrice.toString());
     priceCount.innerHTML = `${sum.toString().slice(0, 1)} ${sum
