@@ -61,7 +61,9 @@ for (let item of buttonArray) {
     item.classList.add("active");
     let itemPrice = item.dataset.price;
     sum += parseInt(itemPrice.toString());
-    priceCount.innerHTML = `1 ${sum.toString().slice(1)}`;
+    priceCount.innerHTML = `${sum.toString().slice(0, 1)} ${sum
+      .toString()
+      .slice(1)}`;
     item.disabled = true;
   });
 }
